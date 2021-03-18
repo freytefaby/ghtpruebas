@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html  lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body class="m-0" style="overflow-x: hidden" ng-app="app">
+    <div class="container-fluid">
+        <div class="col">
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Prueba de conocimiento Angular JS GHT</a>
+                </div>
+              </nav>
+        </div>
+
+
+        <div ng-view></div>
+       
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.8.2/angular-route.min.js" ></script>
+    
+    <script type="text/javascript">
+        var routing = angular.module('app',['ngRoute']);
+        routing.config(['$routeProvider',function($routeProvider){
+
+            $routeProvider.when('/',{
+              controller:'auth',
+              templateUrl:'vistas/login.html'
+            }).when('/login',{
+              controller:'auth',
+              templateUrl:'vistas/login.html'
+            }).when('/productos',{
+              controller:'productos',
+              templateUrl:'vistas/home.html'
+            }).otherwise({
+              redirectTo:'/'
+            })
+        }]);
+    </script>
+    <script type="text/javascript" src="controllers/loginController.js" ></script>
+    <script type="text/javascript" src="controllers/productosController.js" ></script>
+</body>
+
+</html>

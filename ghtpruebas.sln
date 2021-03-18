@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ghtpruebas", "ghtpruebas.csproj", "{8F2C0038-E1B3-488B-AC83-C127F671A76D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F2C0038-E1B3-488B-AC83-C127F671A76D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F2C0038-E1B3-488B-AC83-C127F671A76D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F2C0038-E1B3-488B-AC83-C127F671A76D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F2C0038-E1B3-488B-AC83-C127F671A76D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B92918E2-79D6-486C-84F5-60F6C88E239F}
+	EndGlobalSection
+EndGlobal

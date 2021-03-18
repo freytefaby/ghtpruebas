@@ -1,0 +1,75 @@
+<div class="col mt-3">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#register">
+        Registrar nuevo producto
+    </button>
+</div>
+
+<table class="table table-bordered border-primary mt-3">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Codigo</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Valor Unitario</th>
+        <th scope="col">Cantidad Disponible</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="producto in productos">
+        <th scope="row">{{$index +1 }}</th>
+        <td>{{producto.codigo}}</td>
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.valor}}</td>
+        <td>{{producto.cantidad}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="register" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Crear Producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form name="form">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nombre producto</label>
+                  <input  name="producto" ng-model="producto" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Producto" required>
+                  <small style="color:red !important" id="emailHelp" ng-show="form.producto.$touched && form.producto.$invalid" class="form-text text-muted">Campo es requerido</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Codigo</label>
+                  <input name="codigo" ng-model="codigo" type="text" class="form-control" id="exampleInputPassword1" placeholder="Codigo" required>
+                  <small style="color:red !important" id="emailHelp" ng-show="form.codigo.$touched && form.codigo.$invalid" class="form-text text-muted">Campo es requerido</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Valor</label>
+                    <input name="valor" ng-model="valor" type="number" class="form-control" id="exampleInputPassword1" placeholder="Valor" required>
+                    <small style="color:red !important" id="emailHelp" ng-show="form.valor.$touched && form.valor.$invalid" class="form-text text-muted">Campo es requerido</small>
+                  </div>
+
+                  
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Cantidad</label>
+                    <input name="cantidad" ng-model="cantidad" type="number" class="form-control" id="exampleInputPassword1" placeholder="Cantidad" required>
+                    <small style="color:red !important" id="emailHelp" ng-show="form.cantidad.$touched && form.cantidad.$invalid" class="form-text text-muted">Campo es requerido</small>
+                  </div>
+               
+                  <div class="d-grid gap-2">
+                    <button type="submit" ng-if="form.producto.$valid && form.codigo.$valid && form.cantidad.$valid && form.valor.$valid" ng-click="crearProducto()" class="btn btn-primary btn-block mt-3">Submit</button>
+                    <button type="submit" disabled ng-if="!form.producto.$valid || !form.codigo.$valid || !form.valor.$valid || !form.cantidad.$valid" ng-click="login()" class="btn btn-primary mt-3">Submit</button>
+                  </div>
+                
+              </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
